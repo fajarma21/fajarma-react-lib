@@ -1,9 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
 import type { UseIntersectParams } from './index.types';
 
-const useIntersect = ({ callback, options }: UseIntersectParams) => {
+const useIntersect = <T extends Element>({
+  callback,
+  options,
+}: UseIntersectParams) => {
   const [intersecting, setIntersecting] = useState(false);
-  const elementRef = useRef<HTMLDivElement>(null);
+  const elementRef = useRef<T>(null);
 
   useEffect(() => {
     const newOptions = {
@@ -16,7 +19,7 @@ const useIntersect = ({ callback, options }: UseIntersectParams) => {
     const observer = new IntersectionObserver((e) => {
       const isIntersecting = e[0].isIntersecting;
       setIntersecting(isIntersecting);
-      if (isIntersecting) callback();
+      if (isIntersecting && callback) callback();
     }, newOptions);
 
     if (elementRef.current) {

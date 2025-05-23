@@ -1,4 +1,4 @@
 export interface UseIntersectParams {
-  callback: () => void;
+  callback?: () => void;
   options?: IntersectionObserverInit;
 }
