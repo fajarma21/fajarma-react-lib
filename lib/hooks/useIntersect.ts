@@ -1,10 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
-import type { UseIntersectParams } from './index.types';
 
-const useIntersect = <T extends Element>({
-  callback,
-  options,
-}: UseIntersectParams) => {
+const useIntersect = <T extends Element>(
+  callback?: () => void,
+  options?: IntersectionObserverInit
+) => {
   const [intersecting, setIntersecting] = useState(false);
   const elementRef = useRef<T>(null);
 
