@@ -95,17 +95,19 @@ const { ref, intersecting } = useIntersect(callback, options);
 
 - **Returns**
   - `ref`: `React.RefObject`
-  - `intersecting`: Intersect status (`boolean`);
 
 ```typescript
 import { useIntersect } from "fajarma-react-lib";
 ...
 
-const { ref, intersecting } = useIntersect(() => console.log('intersecting'));
+const handleIntersect = () => {
+  console.log('intersecting');
+}
+
+const { ref, intersecting } = useIntersect(handleIntersect);
 ...
 
 <div ref={ref} />
-{intersecting && <div >Element</div>}
 ```
 
 ### useResizeObserver
