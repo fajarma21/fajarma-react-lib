@@ -45,6 +45,7 @@
 }
 
 .overlay {
+  box-sizing: border-box;
   top: 0;
   left: 0;
   width: 100%;
@@ -61,6 +62,7 @@
 }
 
 .dialog {
+  box-sizing: border-box;
   top: 50%;
   left: 50%;
   width: 80%;
