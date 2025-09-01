@@ -1,6 +1,6 @@
 {
   "name": "fajarma-react-lib",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "type": "module",
   "files": [
     "dist"
@@ -44,5 +44,8 @@
   },
   "sideEffects": [
     "**/*.css"
-  ]
+  ],
+  "dependencies": {
+    "sass": "^1.91.0"
+  }
 }

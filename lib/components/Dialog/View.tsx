@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import classNames from '../../utils/classNames';
 import Portal from '../Portal';
-import css from './View.module.css';
+import css from './View.module.scss';
 import type { DialogProps } from './View.types';
 
 const Dialog = ({
@@ -52,10 +52,10 @@ const Dialog = ({
           onClick={onClose}
         />
         <div
-          className={classNames(css.baseFloating, css.dialog, className)}
+          className={classNames(css.baseFloating, css.dialog)}
           data-show={display}
         >
-          {children}
+          <div className={classNames(css.container, className)}>{children}</div>
         </div>
       </Portal>
     );
