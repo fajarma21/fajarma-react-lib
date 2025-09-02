@@ -39,6 +39,8 @@
 
 .baseFloating {
   position: fixed;
+  top: 0;
+  left: 0;
   z-index: 50;
   animation-duration: 500ms;
   animation-fill-mode: forwards;
