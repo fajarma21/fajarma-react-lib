@@ -19,7 +19,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
 
-      <Dialog display={display} onClose={toggle}>
+      <Dialog display={display} className="dialogModifier" onClose={toggle}>
         Dialog
       </Dialog>
     </>
