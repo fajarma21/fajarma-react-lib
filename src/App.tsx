@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Dialog } from '../lib/main';
 
 import './App.scss';
+import Nav from '../lib/fajarma/Nav';
 
 function App() {
   const [display, setDisplay] = useState(false);
@@ -12,6 +13,9 @@ function App() {
 
   return (
     <>
+      <header className="header">
+        <Nav />
+      </header>
       <div className="card">
         <button onClick={toggle}>Test</button>
       </div>
