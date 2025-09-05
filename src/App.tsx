@@ -1,8 +1,9 @@
 import { useState } from 'react';
+
 import { Dialog } from '../lib/main';
+import Nav from '../lib/fajarma/Nav';
 
 import './App.scss';
-import Nav from '../lib/fajarma/Nav';
 
 function App() {
   const [display, setDisplay] = useState(false);

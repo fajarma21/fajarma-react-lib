@@ -1,6 +1,6 @@
-import { LINKS } from './View.constants';
-import css from './View.module.scss';
-import type { NavProps } from './View.types';
+import { LINKS } from './index.constants';
+import css from './index.module.scss';
+import type { NavProps } from './index.types';
 
 const Nav = ({ links }: NavProps) => {
   return (
