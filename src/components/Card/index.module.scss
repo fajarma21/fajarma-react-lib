@@ -1,0 +1,17 @@
+.container {
+  --color-card-border: #e0e0e0;
+  --color-card-background: #ffffff;
+  --color-card-desc: #666666;
+  --color-card-expand-icon: #999999;
+  --color-card-link: #1a73e8;
+  --color-card-button-text: #1a73e8;
+  --color-card-button-border: #1a73e8;
+  --color-card-button-background-hover: #e8f0fe;
+  --color-card-button-text-hover: #1558b0;
+  color: #666666;
+  width: 500px;
+
+  * {
+    box-sizing: border-box;
+  }
+}
