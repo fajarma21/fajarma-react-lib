@@ -27,6 +27,44 @@ const [display, setDisplay] = useState(false);
 
 ---
 
+## Fajarma's Components
+
+### ProjectCard
+
+```typescript
+import { ProjectCard } from "fajarma-react-lib";
+
+const [visible, setVisible] = useState(false);
+const { ref } = useIntersect<HTMLDivElement>(setVisible);
+...
+
+<div ref={ref}>
+  <ProjectCard
+    desktopOnly
+    isMobile
+    className="cardModifier"
+    desc={'Some project description'}
+    icon={{
+      expand: <FaChevronDown />,
+      link: <FaLink />,
+      noLink: <FaLinkSlash />,
+      repo: <FaGithub title="Github repository" />,
+      collapse: <FaChevronUp />,
+      stacks: <FaCube title="Stacks" />,
+    }}
+    previewComp={<PreviewComponent />}
+    repo=['https://github.com']
+    stacks=['{"name": "React", "url": "https://react.dev/"}']
+    thumbnail="image.png"
+    title="Card Title"
+    url="https://fajarma.com"
+    visible={visible}
+  />
+</div>
+```
+
+---
+
 ## Custom Hooks
 
 ### useDebounce
