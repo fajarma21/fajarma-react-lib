@@ -1,28 +1,29 @@
-import { useState } from 'react';
+import { useCallback, useState } from 'react';
 
 import { Dialog } from '../lib/main';
-import Nav from '../lib/fajarma/Nav';
+
+import Counter from './components/Counter';
+import Header from './components/Header';
+import Other from './components/Other';
 
 import './App.scss';
 
 function App() {
   const [display, setDisplay] = useState(false);
 
-  const toggle = () => {
+  const toggle = useCallback(() => {
     setDisplay((prev) => !prev);
-  };
+  }, []);
 
   return (
     <>
-      <header className="header">
-        <Nav />
-      </header>
+      <Header />
       <div className="card">
         <button onClick={toggle}>Test</button>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+
+      <Counter />
+      <Other onClick={() => console.log('test')} />
 
       <Dialog display={display} className="dialogModifier" onClose={toggle}>
         Dialog
