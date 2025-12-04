@@ -2,9 +2,9 @@ import { useCallback, useState } from 'react';
 
 import { Dialog } from '../lib/main';
 
+import Card from './components/Card';
 import Counter from './components/Counter';
 import Header from './components/Header';
-import Other from './components/Other';
 
 import './App.scss';
 
@@ -23,7 +23,8 @@ function App() {
       </div>
 
       <Counter />
-      <Other onClick={() => console.log('test')} />
+
+      <Card />
 
       <Dialog display={display} className="dialogModifier" onClose={toggle}>
         Dialog
