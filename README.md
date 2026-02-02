@@ -25,21 +25,43 @@ const [display, setDisplay] = useState(false);
 </Dialog>
 ```
 
+### Tooltip
+
+```typescript
+import { Tooltip } from "fajarma-react-lib";
+
+...
+
+<Tooltip text="Visit Us">
+  <UrlIcon />
+</Tooltip>
+```
+
 ---
 
 ## Fajarma's Components
 
+### Contacts
+
+```typescript
+import { FMContacts } from "fajarma-react-lib";
+
+...
+
+<FMContacts links=[{ icon: <LinkedinIcon />, tooltip: "Linkedin Profile", url: "https://linkedin" }] />
+```
+
 ### ProjectCard
 
 ```typescript
-import { ProjectCard } from "fajarma-react-lib";
+import { FMProjectCard } from "fajarma-react-lib";
 
 const [visible, setVisible] = useState(false);
 const { ref } = useIntersect<HTMLDivElement>(setVisible);
 ...
 
 <div ref={ref}>
-  <ProjectCard
+  <FMProjectCard
     desktopOnly
     isMobile
     className="cardModifier"
@@ -63,6 +85,16 @@ const { ref } = useIntersect<HTMLDivElement>(setVisible);
 </div>
 ```
 
+### Title
+
+```typescript
+import { FMTitle } from "fajarma-react-lib";
+
+...
+
+<FMTitle />
+```
+
 ---
 
 ## Custom Hooks
@@ -74,7 +106,6 @@ const debounced = useDebounce(callback, options);
 ```
 
 - **Parameters**
-
   - `callback`: Function to be debounced
 
     | Type                | Required | Example  |
@@ -86,15 +117,12 @@ const debounced = useDebounce(callback, options);
     | Type              | Required | Example        |
     | ----------------- | :------: | -------------- |
     | UseDebonceOptions |          | see more below |
-
     - **UseDebonceOptions**
-
       - `disabledValue`: Disable debounce when meet this value (execute immediately).
 
       | Type | Default   | Example |
       | :--: | --------- | ------- |
       |  T   | undefined |         |
-
       - `timeout`: Debounce time limit.
 
       |  Type  | Default | Example |
@@ -122,7 +150,6 @@ const { ref, intersecting } = useIntersect(callback, options);
 ```
 
 - **Parameters**
-
   - `callback`: Function to be called when element intersected
 
     | Type       | Required | Example  |
@@ -155,7 +182,6 @@ const { ref, elementSize } = useResizeObserver(callback);
 ```
 
 - **Parameters**
-
   - `callback`: Function to be called when element resized
 
     | Type       | Required | Example  |
@@ -188,7 +214,6 @@ const throttled = useThrottle(callback, options);
 ```
 
 - **Parameters**
-
   - `callback`: Function to be throttled
 
     | Type                | Required | Example  |
@@ -200,15 +225,12 @@ const throttled = useThrottle(callback, options);
     | Type               | Required | Example        |
     | ------------------ | :------: | -------------- |
     | UseThrottleOptions |          | see more below |
-
     - **UseThrottleOptions**
-
       - `disabledValue`: Disable throttle when meet this value (execute immediately).
 
       | Type | Default   | Example |
       | :--: | --------- | ------- |
       |  T   | undefined |         |
-
       - `timeout`: Time interval.
 
       |  Type  | Default | Example |
