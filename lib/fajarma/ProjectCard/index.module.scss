@@ -21,7 +21,7 @@
     scale: 1 1;
   }
 
-  @media only screen and (min-width: 640px) {
+  @media (hover: hover) {
     &:hover {
       .chevron {
         display: block;
@@ -85,7 +85,7 @@
       display: block;
     }
 
-    @media only screen and (min-width: 640px) {
+    @media (hover: hover) {
       display: none;
     }
   }
@@ -170,7 +170,9 @@
   height: 48px;
   border-radius: 24px;
   border: 2px solid;
-  transition: all 250ms, transform 750ms;
+  transition:
+    all 250ms,
+    transform 750ms;
 
   .text {
     z-index: 2;
@@ -216,7 +218,7 @@
       transition: all 750ms;
     }
 
-    @media only screen and (min-width: 768px) {
+    @media (hover: hover) {
       &::after {
         z-index: 0;
         width: 24px;
