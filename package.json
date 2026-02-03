@@ -45,5 +45,8 @@
   },
   "sideEffects": [
     "**/*.css"
-  ]
+  ],
+  "publishConfig": {
+    "provenance": false
+  }
 }
