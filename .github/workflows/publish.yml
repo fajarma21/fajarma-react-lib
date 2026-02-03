@@ -7,6 +7,10 @@ on:
   release:
     types: [created]
 
+permissions:
+  id-token: write # Required for OIDC
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,9 +24,6 @@ jobs:
   publish-npm:
     needs: build
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-      packages: write # Grant write permission for packages scope
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4

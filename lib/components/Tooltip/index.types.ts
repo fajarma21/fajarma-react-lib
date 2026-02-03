@@ -1,10 +1,6 @@
 import type { ReactNode } from 'react';
+import type { TooltipData } from '../../types';
 
-export interface TooltipProps {
-  offset?: {
-    top?: number;
-    left?: number;
-  };
+export interface TooltipProps extends TooltipData {
   children: ReactNode;
-  text: string;
 }
