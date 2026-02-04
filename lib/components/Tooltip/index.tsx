@@ -1,3 +1,4 @@
+import classNames from '../../utils/classNames';
 import css from './index.module.scss';
 import type { TooltipProps } from './index.types';
 
@@ -10,7 +11,7 @@ const Tooltip = ({
     <div className={css.container}>
       {children}
       <div
-        className={css.floater}
+        className={classNames('fm-tooltip', css.floater)}
         style={{
           top: offset.top ? `${offset.top}px` : undefined,
           left: offset.left ? `${offset.left}px` : undefined,
