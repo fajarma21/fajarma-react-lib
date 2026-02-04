@@ -1,11 +1,10 @@
 import type { ReactNode } from 'react';
-import type { TooltipData } from '../../types';
 
 export interface ContactsProps {
+  className?: string;
   links: Array<{
     icon: ReactNode;
-    tooltip?: TooltipData['text'];
+    tooltip?: string;
     url: string;
   }>;
-  tooltipOffset?: TooltipData['offset'];
 }
