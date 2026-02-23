@@ -1,6 +1,7 @@
 import { Fragment, useState } from 'react';
 
 import classNames from '../../utils/classNames';
+import Image from '../Image';
 import css from './index.module.scss';
 import type { ProjectCardProps } from './index.types';
 
@@ -35,7 +36,7 @@ const ProjectCard = ({
           {expanded ? (
             previewComp
           ) : (
-            <img src={thumbnail} className={css.thumbnail} />
+            <Image src={thumbnail} className={css.thumbnail} />
           )}
         </div>
         <div className={css.content}>
