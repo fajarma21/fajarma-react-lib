@@ -29,7 +29,6 @@ const [display, setDisplay] = useState(false);
 
 ```typescript
 import { Tooltip } from "fajarma-react-lib";
-
 ...
 
 <Tooltip text="Visit Us">
@@ -45,10 +44,18 @@ import { Tooltip } from "fajarma-react-lib";
 
 ```typescript
 import { FMContacts } from "fajarma-react-lib";
-
 ...
 
 <FMContacts links=[{ icon: <LinkedinIcon />, tooltip: "Linkedin Profile", url: "https://linkedin" }] />
+```
+
+### Image
+
+```typescript
+import { FMImage } from "fajarma-react-lib";
+...
+
+<FMImage src="image" />
 ```
 
 ### ProjectCard
@@ -89,7 +96,6 @@ const { ref } = useIntersect<HTMLDivElement>(setVisible);
 
 ```typescript
 import { FMTitle } from "fajarma-react-lib";
-
 ...
 
 <FMTitle />
