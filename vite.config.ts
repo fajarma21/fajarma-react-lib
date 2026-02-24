@@ -25,13 +25,13 @@ export default defineConfig({
       external: ['react', 'react-dom', 'react/jsx-runtime'],
       input: Object.fromEntries(
         glob
-          .sync('lib/**/*.{ts,tsx}', {
+          .sync('lib/**/*.{ts,tsx,png}', {
             ignore: ['lib/**/*.d.ts'],
           })
           .map((file) => [
             relative('lib', file.slice(0, file.length - extname(file).length)),
             fileURLToPath(new URL(file, import.meta.url)),
-          ])
+          ]),
       ),
       output: {
         assetFileNames: 'assets/[name][extname]',
