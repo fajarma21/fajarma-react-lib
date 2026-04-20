@@ -30,29 +30,27 @@ const ProjectCard = ({
     <div
       className={classNames(css.item, className)}
       data-visible={visible || undefined}
+      data-expanded={dataExpanded}
     >
       <div className={css.wrapper}>
-        <div className={css.previewWrapper} data-expanded={dataExpanded}>
-          {expanded ? (
-            previewComp
-          ) : (
-            <Image src={thumbnail} className={css.thumbnail} />
-          )}
+        <div className={css.previewWrapper}>
+          {previewComp}
+          <Image src={thumbnail} className={css.thumbnail} />
         </div>
         <div className={css.content}>
           <button
             type="button"
             className={css.head}
             onClick={() => setExpanded((prev) => !prev)}
-            aria-expanded={expanded}
           >
             <h3 className={css.title}>{title}</h3>
             <div className={css.chevron}>
-              {expanded ? icon.collapse : icon.expand}
+              {icon.collapse}
+              {icon.expand}
             </div>
           </button>
           <p className={css.desc}>{desc}</p>
-          <div className={css.extra} data-expanded={dataExpanded}>
+          <div className={css.extra}>
             <div className={css.row}>
               <div className={css.icon}>{icon.stacks}</div>
               <div className={css.stacks}>
@@ -86,7 +84,7 @@ const ProjectCard = ({
           </div>
         </div>
       </div>
-      <div className={css.btnWrapper} data-expanded={dataExpanded}>
+      <div className={css.btnWrapper}>
         <a
           className={css.liveBtn}
           href={urlAvailable || '#!'}
