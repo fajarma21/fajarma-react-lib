@@ -26,7 +26,7 @@ const Card = () => {
             stacks: <span>Stacks</span>,
           }}
           isMobile={false}
-          previewComp={undefined}
+          previewComp={<div>Preview</div>}
           repo={DUMMY_PROJECT_CARD.repo}
           stacks={DUMMY_PROJECT_CARD.stacks}
           thumbnail={DUMMY_PROJECT_CARD.thumbnail}
