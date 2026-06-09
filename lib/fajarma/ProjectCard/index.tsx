@@ -49,8 +49,8 @@ const ProjectCard = ({
               {icon.expand}
             </div>
           </button>
-          <p className={css.desc}>{desc}</p>
           <div className={css.extra}>
+            <p className={css.desc}>{desc}</p>
             <div className={css.row}>
               <div className={css.icon}>{icon.stacks}</div>
               <div className={css.stacks}>
@@ -93,7 +93,7 @@ const ProjectCard = ({
         >
           <div className={css.text}>
             {urlAvailable ? icon.link : icon.noLink}
-            <b>{desktopUrl ? 'Desktop only' : url || 'Not deployed yet'}</b>
+            <b>{desktopUrl ? 'Desktop only' : title || 'Not deployed yet'}</b>
           </div>
         </a>
       </div>
