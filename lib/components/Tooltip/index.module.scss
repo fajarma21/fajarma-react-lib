@@ -1,3 +1,5 @@
+@use '/lib/styles/index.scss' as styles;
+
 @keyframes show {
   from {
     opacity: 0;
@@ -12,7 +14,7 @@
 .container {
   position: relative;
 
-  @media (hover: hover) {
+  @include styles.hoverable {
     &:hover .floater {
       display: block;
     }

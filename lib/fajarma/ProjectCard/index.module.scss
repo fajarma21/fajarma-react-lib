@@ -1,3 +1,5 @@
+@use '/lib/styles/index.scss' as styles;
+
 // mixins
 
 @mixin expandedPreviewWrapper {
@@ -33,7 +35,6 @@
 
 @mixin expandedExtra {
   max-height: 100px;
-  margin-top: 8px;
 }
 
 @mixin collapsedExtra {
@@ -50,7 +51,7 @@
 @mixin collapsedBtnWrapper {
   height: 0;
   padding: 0 16px;
-  margin-top: 16px;
+  margin-top: 10px;
 }
 
 // styles
@@ -67,7 +68,7 @@
 .item {
   display: flex;
   flex-direction: column;
-  min-height: 225px;
+  min-height: 160px;
   border-radius: 16px;
   border: 2px solid var(--color-card-border);
   background-color: var(--color-card-background);
@@ -91,6 +92,7 @@
     @include collapsedPreviewWrapper;
     overflow: hidden;
     margin-bottom: 8px;
+    border-radius: 14px 14px 8px 8px;
     transition: height 500ms;
 
     & > * {
@@ -121,7 +123,6 @@
     justify-content: space-between;
     gap: 8px;
     width: 100%;
-    margin-bottom: 4px;
     .title {
       margin: 0;
     }
@@ -139,21 +140,21 @@
         display: block;
       }
 
-      @media (hover: hover) {
+      @include styles.hoverable {
         display: none;
       }
     }
-  }
-
-  .desc {
-    margin: 0;
-    color: var(--color-card-desc);
   }
 
   .extra {
     @include collapsedExtra;
     overflow: hidden;
     transition: all 500ms;
+  }
+
+  .desc {
+    margin: 0 0 8px;
+    color: var(--color-card-desc);
   }
 
   .row {
@@ -258,7 +259,7 @@
         transition: all 750ms;
       }
 
-      @media (hover: hover) {
+      @include styles.hoverable {
         &::after {
           z-index: 0;
           width: 24px;
@@ -300,7 +301,7 @@
     }
   }
 
-  @media (hover: hover) {
+  @include styles.hoverable {
     &[data-expanded] {
       .previewWrapper {
         @include collapsedPreviewWrapper;
@@ -318,10 +319,6 @@
     &:hover {
       .previewWrapper {
         @include expandedPreviewWrapper;
-      }
-
-      .extra {
-        margin-top: 16px;
       }
     }
 
