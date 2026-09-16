@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 
-const useResizeObserver = <T extends Element>(handleChange?: () => void) => {
+const useResizeObserver = <T extends Element>(
+  handleChange?: (target: T, width: number, height: number) => void,
+) => {
   const ref = useRef<T>(null);
   const [elementSize, setElementSize] = useState({
     height: 0,
@@ -10,11 +12,17 @@ const useResizeObserver = <T extends Element>(handleChange?: () => void) => {
   useEffect(() => {
     const resizeObserver = new ResizeObserver((entries) => {
       for (const entry of entries) {
+        const width = entry.target.clientWidth;
+        const height = entry.target.clientHeight;
+
         setElementSize({
-          width: entry.target.clientWidth,
-          height: entry.target.clientHeight,
+          width,
+          height,
         });
-        if (handleChange) handleChange();
+
+        if (handleChange && ref.current) {
+          handleChange(ref.current, width, height);
+        }
       }
     });
 
