@@ -93,7 +93,9 @@ const ProjectCard = ({
         >
           <div className={css.text}>
             {urlAvailable ? icon.link : icon.noLink}
-            <b>{desktopUrl ? 'Desktop only' : title || 'Not deployed yet'}</b>
+            <b>
+              {desktopUrl ? 'Desktop only' : url ? title : 'Not deployed yet'}
+            </b>
           </div>
         </a>
       </div>
