@@ -16,6 +16,8 @@ const Dialog = ({
   const timeoutRef = useRef<ReturnType<typeof setTimeout>>(null);
 
   useEffect(() => {
+    if (!display) return;
+
     const handleKeyClose = (e: KeyboardEvent) => {
       if (e.key === 'Escape') onClose();
     };
@@ -46,7 +48,7 @@ const Dialog = ({
           className={classNames(
             css.baseFloating,
             css.overlay,
-            overlayClassName
+            overlayClassName,
           )}
           data-show={display}
           onClick={onClose}
